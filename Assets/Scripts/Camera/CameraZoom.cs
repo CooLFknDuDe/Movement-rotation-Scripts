@@ -24,6 +24,8 @@ namespace MyGameForMED3
 
         private void Awake()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             framingTransposer = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>();
             InputProvider = GetComponent<CinemachineInputProvider>();
             currentTargetDistance = defaultDistance;

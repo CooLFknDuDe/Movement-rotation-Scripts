@@ -6,8 +6,6 @@ namespace MyGameForMED3
 {
     public class item_collector : MonoBehaviour
     {
-       
-        int collectibleCount = 0;
         public GameObject Flower;
         
 
@@ -19,8 +17,9 @@ namespace MyGameForMED3
             if (other.gameObject.CompareTag("Collectible"))
             {
                 Destroy(other.gameObject);
-                collectibleCount++;
-                Debug.Log(collectibleCount + " Flowers Collected");
+            
+                Counted_collectibles.instance.ItemCollected();
+                Debug.Log(" Flowers Collected");
                 
 
 
@@ -28,7 +27,7 @@ namespace MyGameForMED3
             }
 
 
-            string NewCounter = collectibleCount.ToString();
+            //string NewCounter = collectibleCount.ToString();
 
 
         }
